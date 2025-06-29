@@ -1,0 +1,353 @@
+/* フォント */
+.libertinus-mono-regular {
+  font-family: "Libertinus Mono", monospace;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 32px;
+  text-decoration: underline;
+  text-underline-offset: 10px; /* ← この行で下線との距離を調整 */
+  text-decoration-thickness: 1px; /* ← 下線の太さを指定（細く） */
+  letter-spacing: 4px; /* ← 文字の間隔（調整可） */
+}
+
+/* 共通リセット */
+html {
+  scroll-behavior: smooth;
+  font-family: "Libertinus Mono", monospace;
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Montserrat', sans-serif;
+  line-height: 1.6;
+  color: #333;
+  background-color: white;
+}
+
+/*リンク*/
+a {
+  transition: opacity .3s;
+  text-decoration: none;
+  color: black;
+}
+/*リンクホバー時*/
+a:hover {
+  color: #007BFF;
+  /*text-decoration: underline;*/
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+/* ========== header ========== */
+.header {
+  background-color: transparent;
+  padding: 20px 40px 0;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1000;
+}
+
+/* スマホ用メニューボタン */
+.menu-toggle {
+  position: fixed;
+  top: 15px;
+  right: 15px;
+  z-index: 10000;
+  background-color: transparent;
+  padding: 8px 12px;
+  font-size: 16px;
+  border-radius: 4px;
+  cursor: pointer;
+  display: block;
+}
+
+/* ナビゲーション */
+.gnav-list {
+  display: none;
+  flex-direction: column;
+  background-color: transparent;
+  padding-top:30px;       /* メニューの先頭位置 */
+}
+.gnav-list.show {
+  display: flex;
+  flex-direction: column;
+  position: fixed;         /* 固定配置 */
+  top: 60px;               /* メニューボタンの下あたりに調整 */
+  right: 0;                /* 画面右に表示 */
+  background-color: white; /* 視認性のため背景色を指定 */
+  width: 200px;            /* 必要に応じて調整 */
+  padding: 20px;
+  box-shadow: -2px 0 5px rgba(0, 0, 0, 0.1); /* 右からのスライド感に */
+  z-index: 9999;
+}
+
+.gnav-item {
+  margin: 0; /* li 要素の上下マージンをリセット */
+}
+
+.gnav-item a {
+  display: block;
+  line-height: 1.2;  /* 行間も少し詰める */
+}
+
+
+/* ========== メインビジュアル ========== */
+.mv {
+  display: flex;
+  align-items: top;
+  justify-content: center;
+  height: 100vh;
+  text-align: center;
+  background-color: transparent;
+  border: 1px solid black; /* ← この行を追加 */
+  margin-left: 2%;
+  margin-right: 2%;
+}
+.mv-container {
+  max-width: 90vh;
+  max-height: 90vh;
+  margin: 0 auto;
+}
+.mv-title {
+  font-size: 24px;
+  margin-top: 20px;
+}
+.mv-subtitle {
+  font-size: 16px;
+  margin-top: 10px;
+}
+.mv-text {
+  font-family: "Libertinus Mono", monospace;
+  font-size: 10vh;
+  margin-top: 20%;
+  font-style: italic; /* ← イタリックにする */
+}
+
+/* ========== セクション共通 ========== */
+.section {
+  display: flex;
+  align-items: top;
+  justify-content: center;
+  height: auto;
+  text-align: center;
+  background-color: transparent;
+  border: 1px solid black; /* ← この行を追加 */
+  margin-left: 2%;
+  margin-right: 2%;
+  padding-top: 5%;
+  padding-bottom: 10%;
+  scroll-margin-top: 1px; /* ← .header の高さと同じにする */
+}
+.title {
+  font-size: 28px;
+  text-align: center;
+  padding-top: 3vh;
+  padding-bottom: 3vh;
+}
+
+/* ========== profile ========== */
+.profile-intro {
+  text-align: left;
+  margin: 0 auto;
+  line-height: 1.8;
+  font-size: 16px;
+}
+
+.profile-name {
+  font-size: 32px;
+  text-align: left; /* ← これを追加 */
+}
+
+.profile-subname {
+  font-size: 16px;
+  text-align: left; /* ← これを追加 */
+  margin-bottom:30px;
+}
+
+.profile {
+  display: flex;              /* 横並びにする */
+  align-items: flex-start;    /* 上端を揃える */
+  gap: 15%;                  /* 写真とテキストの間隔 */
+  justify-content: center;    /* 中央寄せ（任意） */
+  padding: 20px;
+}
+
+.profile-img img {
+  width: 70%;                     /* 写真サイズ（調整可） */
+  border: 1px solid black;        /* 黒の1px枠線を追加 */
+  object-fit: cover;              /* はみ出し防止 */
+  margin-left:40%;
+}
+
+
+.profile-body {
+  max-width: 600px;           /* テキストの最大幅を制限 */
+}
+
+
+/* ========== works ========== */
+.works {
+  height: auto;
+}
+.works-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+}
+.works-item {
+  width: 250px;
+  background-color: white;
+  border: 1px solid #ccc;
+  padding: 10px;
+  text-align: center;
+}
+.works-img img {
+  width: 100%;
+  height: auto;
+}
+.works-name {
+  font-weight: bold;
+  margin: 10px 0 5px;
+}
+.works-info {
+  font-size: 14px;
+  color: #666;
+}
+
+/* ========== skill ========== */
+.skill-intro {
+  text-align: left;
+  margin: 0 auto;
+  line-height: 1.8;
+  font-size: 16px;
+}
+
+.skill-name {
+  font-size: 20px;
+  text-align: left; /* ← これを追加 */
+  padding-bottom: 2vh;
+}
+
+.skill-subname {
+  font-size: 16px;
+  text-align: left; /* ← これを追加 */
+  margin-bottom:30px;
+}
+
+.skill {
+  display: flex;              /* 横並びにする */
+  align-items: flex-start;    /* 上端を揃える */
+  gap: 15%;                  /* 写真とテキストの間隔 */
+  justify-content: center;    /* 中央寄せ（任意） */
+  padding: 20px;
+}
+
+.skill-body {
+  max-width: 600px;           /* テキストの最大幅を制限 */
+}
+
+/* ========== page top ========== */
+.page-top {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background-color: #eee;
+  border-radius: 50%;
+  padding: 10px;
+  cursor: pointer;
+}
+
+/* ========== footer ========== */
+.footer {
+  text-align: center;
+  padding: 20px;
+  font-size: 14px;
+  background-color: #fafafa;
+  border-top: 1px solid #ccc;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+/* ========== スマホメニュー行間調整 ========== */
+.gnav-list.show .gnav-item a {
+  padding: 12px 0;
+  line-height: 1.8;
+}
+
+/* ========== PCレイアウト ========== */
+@media screen and (min-width: 768px) {
+  .menu-toggle {
+    display: none;
+  }
+
+  .gnav-list {
+    display: flex !important;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .gnav-item {
+    display: block;
+    margin-bottom: 16px;
+  }
+
+  .gnav-item a {
+    display: block;
+    padding: 12px 0;
+    padding-top: 1px;
+  }
+
+  .gnav-list.show {
+    gap: 12px;    
+  }
+
+}
+
+/* スマホ */
+@media screen and (max-width: 767px) {
+  .gnav-list.show {
+    width: 70vw;
+    right: 5%;
+    font-size: 24px;
+    text-align: center;
+  }
+}
+
+.pagetop {
+    height: 50px;
+    width: 50px;
+    position: fixed;
+    right: 30px;
+    bottom: 30px;
+    border: solid 1px gray;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: transparent;
+    z-index: 2;
+    transition: all 0.3s ease; /* ← アニメーションを追加 */
+}
+
+.pagetop:hover {
+    border-color: #00BFFF;         /* 水色の線に変化 */
+    background-color: #E0F7FF;     /* 水色っぽい背景（任意） */
+    color: #00BFFF;                /* アイコンやテキストがあれば色変更 */
+    cursor: pointer;
+}
+
+
+.pagetop__arrow {
+    height: 10px;
+    width: 10px;
+    border-top: 1px solid gray;
+    border-right: 1px solid gray;
+    transform: translateY(20%) rotate(-45deg);
+}
