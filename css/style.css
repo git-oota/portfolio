@@ -282,10 +282,38 @@ ul {
   margin: 0 auto;
 }
 
-/* ========== スマホメニュー行間調整 ========== */
-.gnav-list.show .gnav-item a {
-  padding: 12px 0;
-  line-height: 1.8;
+
+/* ========== TOPに戻るボタン ========== */
+.pagetop {
+    height: 50px;
+    width: 50px;
+    position: fixed;
+    right: 30px;
+    bottom: 30px;
+    border: solid 1px gray;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: transparent;
+    z-index: 2;
+    transition: all 0.3s ease; /* ← アニメーションを追加 */
+}
+
+.pagetop:hover {
+    border-color: #00BFFF;         /* 水色の線に変化 */
+    background-color: #E0F7FF;     /* 水色っぽい背景（任意） */
+    color: #00BFFF;                /* アイコンやテキストがあれば色変更 */
+    cursor: pointer;
+}
+
+
+.pagetop__arrow {
+    height: 10px;
+    width: 10px;
+    border-top: 1px solid gray;
+    border-right: 1px solid gray;
+    transform: translateY(20%) rotate(-45deg);
 }
 
 /* ========== PCレイアウト ========== */
@@ -317,6 +345,13 @@ ul {
 
 }
 
+/* ========== スマホメニュー行間調整 ========== */
+.gnav-list.show .gnav-item a {
+  padding: 12px 0;
+  line-height: 1.8;
+}
+
+
 /* スマホ */
 @media screen and (max-width: 767px) {
   .gnav-list.show {
@@ -327,34 +362,12 @@ ul {
   }
 }
 
-.pagetop {
-    height: 50px;
-    width: 50px;
-    position: fixed;
-    right: 30px;
-    bottom: 30px;
-    border: solid 1px gray;
-    border-radius: 50%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: transparent;
-    z-index: 2;
-    transition: all 0.3s ease; /* ← アニメーションを追加 */
-}
-
-.pagetop:hover {
-    border-color: #00BFFF;         /* 水色の線に変化 */
-    background-color: #E0F7FF;     /* 水色っぽい背景（任意） */
-    color: #00BFFF;                /* アイコンやテキストがあれば色変更 */
-    cursor: pointer;
-}
-
-
-.pagetop__arrow {
-    height: 10px;
-    width: 10px;
-    border-top: 1px solid gray;
-    border-right: 1px solid gray;
-    transform: translateY(20%) rotate(-45deg);
+/* スマホ */
+@media screen and (max-width: 450px) {
+  .gnav-list.show {
+    width: 70vw;
+    right: 5%;
+    font-size: 20px;
+    text-align: center;
+  }
 }
