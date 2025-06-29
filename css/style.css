@@ -195,6 +195,13 @@ ul {
 .works {
   height: auto;
 }
+
+.works-subtitle {
+  font-size: 24px;
+  margin-top: 30px;
+}
+
+
 .works-list {
   display: flex;
   flex-wrap: wrap;
@@ -202,14 +209,14 @@ ul {
   justify-content: center;
 }
 .works-item {
-  width: 250px;
+  width: 80vh;
   background-color: white;
   border: 1px solid #ccc;
   padding: 10px;
   text-align: center;
 }
 .works-img img {
-  width: 100%;
+  width: 80%;
   height: auto;
 }
 .works-name {
