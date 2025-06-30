@@ -210,11 +210,12 @@ ul {
   justify-content: center;
 }
 .works-item {
-  width: 80vh;
   background-color: white;
   border: 1px solid #ccc;
   padding: 10px;
   text-align: center;
+  width: 90%;
+  max-width: 600px;
 }
 .works-img img {
   width: 80%;
@@ -363,6 +364,7 @@ ul {
     right: 5%;
     font-size: 24px;
     text-align: center;
+    box-sizing: border-box;
   }
   .profile {
     flex-direction: column;
@@ -386,6 +388,10 @@ ul {
   .mv-text {
     font-size: 7vh;
     margin-top: 10%;
+  }
+  html, body {
+    overflow-x: hidden;
+    width: 100%;
   }
 }
 
